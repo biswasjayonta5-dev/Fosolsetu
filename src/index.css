@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #f4f6ee;
+    --card: #ffffff;
+    --ink: #17261a;
+    --mut: #526352;
+    --g: #15803d;
+    --g-dark: #14532d;
+    --g-light: #e8f5e6;
+    --g2: #dcf0d8;
+    --gold: #b45309;
+    --gold-light: #fef3c7;
+    --soil: #5c3d2e;
+    --soil-light: #f5ebe6;
+    --bd: #d6ded0;
+    --bad: #b91c1c;
+    --bad2: #fee2e2;
+    --bkash: #e2136e;
+    --onG: #ffffff;
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    --bg: #0d160f;
+    --card: #162419;
+    --ink: #f0f7ec;
+    --mut: #9eb59b;
+    --g: #34d399;
+    --g-dark: #059669;
+    --g-light: #163823;
+    --g2: #1e3d25;
+    --gold: #f59e0b;
+    --gold-light: #3a2e10;
+    --soil: #d4a373;
+    --soil-light: #2b1f16;
+    --bd: #2d4233;
+    --bad: #f87171;
+    --bad2: #451a1a;
+    --bkash: #ff4081;
+    --onG: #09170e;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: "Hind Siliguri", system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Safe area padding helper */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Custom scrollbar for mobile */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 130, 100, 0.2);
+  border-radius: 4px;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+.pulse-badge {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}
