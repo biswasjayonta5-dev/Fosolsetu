@@ -46,6 +46,7 @@ export interface CropPlan {
   repDate: string;
   est: number;
   status: 'offer' | 'active' | 'repaid';
+  description?: string;
   disbursedTo?: string;
   disbursedAt?: string;
 }
@@ -99,4 +100,43 @@ export interface Dealer {
   i: string;
   f: boolean;
   phone: string;
+}
+
+export interface CropDiseaseDiagnosis {
+  isIdentifiable: boolean;
+  isHealthy: boolean;
+  cropNameBn: string;
+  cropNameEn: string;
+  diseaseNameBn: string;
+  diseaseNameEn: string;
+  severity: 'low' | 'moderate' | 'severe' | 'none';
+  severityLabelBn: string;
+  severityLabelEn: string;
+  confidenceScore: number;
+  symptoms: string[];
+  symptomsEn: string[];
+  causes: string[];
+  causesEn: string[];
+  treatments: string[];
+  treatmentsEn: string[];
+  preventiveMeasures: string[];
+  preventiveMeasuresEn: string[];
+  suggestedNextSteps: string[];
+  suggestedNextStepsEn: string[];
+  summarySummaryBn: string;
+  summarySummaryEn: string;
+}
+
+export interface SavedCropReport {
+  id: string;
+  timestamp: string;
+  crop: string;
+  cropNameBn: string;
+  cropNameEn: string;
+  diseaseNameBn: string;
+  diseaseNameEn: string;
+  severity: 'low' | 'moderate' | 'severe' | 'none';
+  confidenceScore: number;
+  imageThumbnail: string;
+  diagnosis: CropDiseaseDiagnosis;
 }

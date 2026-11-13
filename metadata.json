@@ -2,5 +2,7 @@
   "name": "FosolSetu - Agricultural Financing & Marketplace",
   "description": "Mobile-first agricultural fintech platform connecting Bangladeshi farmers with fair micro-advances, transparent zero-commission marketplace, real-time weather alerts, and AI price forecasting in Bengali and English.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

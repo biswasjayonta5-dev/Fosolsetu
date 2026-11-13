@@ -25,7 +25,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
     ];
 
     return (
-      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#162419]/95 backdrop-blur-md border-t border-emerald-900/10 dark:border-emerald-700/20 safe-bottom">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#162419]/95 backdrop-blur-md border-t border-emerald-900/10 dark:border-emerald-700/20 safe-bottom">
         <div className="max-w-md mx-auto grid grid-cols-5 px-1 py-1">
           {items.map((item) => {
             const Icon = item.icon;
@@ -65,7 +65,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
     ];
 
     return (
-      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#162419]/95 backdrop-blur-md border-t border-emerald-900/10 dark:border-emerald-700/20 safe-bottom">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#162419]/95 backdrop-blur-md border-t border-emerald-900/10 dark:border-emerald-700/20 safe-bottom">
         <div className="max-w-md mx-auto grid grid-cols-3 px-2 py-1">
           {items.map((item) => {
             const Icon = item.icon;
@@ -99,7 +99,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
     ];
 
     return (
-      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#162419]/95 backdrop-blur-md border-t border-emerald-900/10 dark:border-emerald-700/20 safe-bottom">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#162419]/95 backdrop-blur-md border-t border-emerald-900/10 dark:border-emerald-700/20 safe-bottom">
         <div className="max-w-md mx-auto grid grid-cols-2 px-4 py-1">
           {items.map((item) => {
             const Icon = item.icon;

@@ -54,9 +54,6 @@ export default function App() {
     return (localStorage.getItem('fosolsetu_view') as ViewType) || 'home';
   });
 
-  // Device Frame Preview toggle (starts true on wide screens, can be toggled)
-  const [isPhoneFrame, setIsPhoneFrame] = useState<boolean>(true);
-
   // Phone number
   const [phone, setPhone] = useState<string>('01712 345678');
 
@@ -363,11 +360,11 @@ export default function App() {
   const activeBuyer = BUYERS.find((b) => b.id === selectedBuyerId) || BUYERS[0];
 
   return (
-    <MobileFrame enabled={isPhoneFrame}>
+    <MobileFrame>
       {/* Toast Bar */}
       <Toast message={toastMessage} onClose={() => setToastMessage('')} />
 
-      {/* Header */}
+      {/* Responsive Header with Desktop Navigation */}
       <Header
         lang={lang}
         onToggleLang={handleToggleLang}
@@ -382,12 +379,13 @@ export default function App() {
             handleNavigate(r === 'farmer' ? 'home' : r === 'buyer' ? 'browse' : 'admin');
           }
         }}
-        isPhoneFrame={isPhoneFrame}
-        onTogglePhoneFrame={() => setIsPhoneFrame(!isPhoneFrame)}
+        currentView={currentView}
+        onNavigate={handleNavigate}
+        onOpenDoctor={() => setDoctorModalOpen(true)}
       />
 
-      {/* Main View Area */}
-      <main className="flex-1 p-4 max-w-md mx-auto w-full">
+      {/* Main View Area - Full Responsive Max Width 1440px */}
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-7">
         {(!role || currentView === 'login') && (
           <LoginView
             phone={phone}

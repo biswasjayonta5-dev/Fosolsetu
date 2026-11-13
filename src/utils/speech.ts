@@ -33,3 +33,13 @@ export function speakText(text: string, lang: Language): void {
     console.error('Speech synthesis error:', err);
   }
 }
+
+// Web Speech API Voice-to-Text Recognition Helper
+export function getSpeechRecognition(): any {
+  if (typeof window === 'undefined') return null;
+  return (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition || null;
+}
+
+export function isSpeechRecognitionSupported(): boolean {
+  return typeof window !== 'undefined' && Boolean((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
+}
